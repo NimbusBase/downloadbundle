@@ -1,7 +1,7 @@
 downloadbundle
 ==============
 
-the starter download bundle for nimbusbase
+This is the starter download bundle for nimbusbase
 
 #Attaching the source
 
@@ -13,4 +13,11 @@ This is the recommended method so we are able to update your library with our ne
 
 The second is linking from the source library that is attached to this download. This works better for offline apps (mobile/chrome) and if you want to stablize your version
 
+#Examples
+
+There are three runnable NimbusBase examples you can set up yourself
+
+tweetdiary - This is the simplest example and shows you how to build a NimbusBase app
+backbone_todomvc - This shows the backbone integration via a todo list
+boothy - This is a photobooth and shows the binary upload and download features for NimbusBase
 
