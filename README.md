@@ -7,7 +7,7 @@ This is the starter download bundle for nimbusbase
 
 There is two ways to attach the source, first is linking it via
 
-> <script src="http://nimbusbase.com/static/nimbus.min.js"></script>
+	<script src="http://nimbusbase.com/static/nimbus.min.js"></script>
 
 This is the recommended method so we are able to update your library with our newest changes.
 
