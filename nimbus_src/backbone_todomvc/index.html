@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Backbone.js • TodoMVC</title>
+	<link rel="stylesheet" href="assets/base.css">
+	<!--[if IE]>
+	<script src="../../assets/ie.js"></script>
+	<![endif]-->
+	
+	<style>
+		.btn {
+			display: inline-block;
+			padding: 4px 14px;
+			margin-bottom: 0;
+			font-size: 14px;
+			line-height: 20px;
+			color: #333;
+			text-align: center;
+			text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+			vertical-align: middle;
+			cursor: pointer;
+			background-color: whiteSmoke;
+			background-image: -webkit-gradient(linear,0 0,0 100%,from(white),to(#E6E6E6));
+			background-image: -webkit-linear-gradient(top,white,#E6E6E6);
+			background-image: -o-linear-gradient(top,white,#E6E6E6);
+			background-image: linear-gradient(to bottom,white,#E6E6E6);
+			background-image: -moz-linear-gradient(top,white,#E6E6E6);
+			background-repeat: repeat-x;
+			border: 1px solid #BBB;
+			border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+			border-color: #E6E6E6 #E6E6E6 #BFBFBF;
+			border-bottom-color: #A2A2A2;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+			filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0);
+			filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+			-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+			-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+			box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+		}
+	</style>
+	
+</head>
+<body>
+	<div id="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('low_contrast_linen.png') #000; z-index: 10000; display: block; text-align: center;">
+
+		<h1 style="font-size: 80px; color: #eee; margin-top: 100px;">todos</h1>
+		
+		<p style="width: 350px; margin: auto; color: #eee; font-size: 20px; line-height: 1.2; margin-bottom: 15px;">This todo list is a implementation of todoMVC with NimbusBase on the Backbone.js framework. <a href="https://github.com/winterlightning/backbone-nimbus-todos/tree/gh-pages" target="_blank" style="color: #005580;">View The Code</a></p>
+		<a class="btn btn-info btn-large" style="border-radius: 20px; box-shadow: 0 0 7px #555;" onclick="Nimbus.Auth.authorize()">Login With Dropbox</a>
+			
+	</div>
+		
+	<section id="todoapp">
+		<header id="header">
+			<h1>todos</h1>
+			<input id="new-todo" placeholder="What needs to be done?" autofocus>
+		</header>
+		<section id="main">
+			<input id="toggle-all" type="checkbox">
+			<label for="toggle-all">Mark all as complete</label>
+			<ul id="todo-list"></ul>
+		</section>
+		<footer id="footer"></footer>
+	</section>
+	<div id="info">
+		<p>Double-click to edit a todo</p>
+		<p>Written by <a href="https://github.com/addyosmani">Addy Osmani</a> Edited by <a href="http://nimbusbase.com">NimbusBase</a></p>
+		<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+	</div>
+	<script type="text/template" id="item-template">
+		<div class="view">
+			<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+			<label><%- title %></label>
+			<button class="destroy"></button>
+		</div>
+		<input class="edit" value="<%- title %>">
+	</script>
+	<script type="text/template" id="stats-template">
+		<span id="todo-count"><strong><%= remaining %></strong> <%= remaining === 1 ? 'item' : 'items' %> left</span>
+		<ul id="filters">
+			<li>
+				<a class="selected" href="#/">All</a>
+			</li>
+			<li>
+				<a href="#/active">Active</a>
+			</li>
+			<li>
+				<a href="#/completed">Completed</a>
+			</li>
+		</ul>
+		<% if (completed) { %>
+		<button id="clear-completed">Clear completed (<%= completed %>)</button>
+		<% } %>
+	</script>
+	<script src="http://nimbusbase.com/static/nimbus.min.js"></script>
+	<script src="assets/base.js"></script>
+	<script src="assets/jquery.min.js"></script>
+	<script src="assets/lodash.min.js"></script>
+	<script src="js/lib/backbone-min.js"></script>
+	<script src="js/lib/backbone-nimbus.js"></script>
+	<script src="js/models/todo.js"></script>
+	<script src="js/collections/todos.js"></script>
+	<script src="js/views/todos.js"></script>
+	<script src="js/views/app.js"></script>
+	<script src="js/routers/router.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
